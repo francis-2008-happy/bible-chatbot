@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    function addMessage(text, sender) {
+    // function addMessage(text, sender) {
+    function addMessage(text, sender, data = {}) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('message', sender + '-message');
 
@@ -64,6 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
             botName.textContent = data.bot_name || 'Assistant';
             messageDiv.appendChild(botName);
         }
+    
+        // if (sender === 'assistant') {
+        //     const botName = document.createElement('div');
+        //     botName.classList.add('bot-name');
+        //     botName.textContent = data.bot_name || 'Assistant';
+        //     messageDiv.appendChild(botName);
+        // }
 
         const messageText = document.createElement('div');
         messageText.classList.add('message-text');
