@@ -36,7 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify({ question: question })
         })
-            .then(response => response.json())
+            // .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.error || `HTTP error! status: ${response.status}`);
+                    });
+                }
+                return response.json();
+            })
             .then(data => {
                 // Remove loading indicator
                 document.getElementById(loadingId).remove();
@@ -80,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         chatHistory.appendChild(messageDiv);
         chatHistory.scrollTop = chatHistory.scrollHeight;
+        addMessage(data.answer, 'assistant', data);
     }
 
     function showReferences(reviews) {

@@ -118,3 +118,17 @@ retriever = vector_store.as_retriever(
     search_type="similarity",
     search_kwargs={"k": 3}  # Adjust k as needed
 )
+
+# Add this function to verify retrieval works:
+def test_retriever():
+    test_query = "What is love?"
+    try:
+        results = retriever.invoke(test_query)
+        print(f"Retriever test successful. Got {len(results)} results.")
+        return True
+    except Exception as e:
+        print(f"Retriever error: {str(e)}")
+        return False
+
+if __name__ == "__main__":
+    test_retriever()
