@@ -153,6 +153,31 @@ button:hover {
     height: 30px;
     background-color: #3498db;
     border-radius: 50%;
-    background-image: url('/static/images/bot-avatar.png');
+    background-image: url('/static/images/francis1.jpeg');
     background-size: cover;
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.loading-dots span {
+    animation: blink 1.4s infinite both;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
 }
