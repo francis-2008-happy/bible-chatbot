@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handbook Assistant</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bible Chat-bot</h1>
+            <p>Ask questions about absolutley anything from the bible and get answers in seconds </p>
+        </header>
+        
+        <main>
+            <div class="chat-container">
+                <div id="chat-history" class="chat-history"></div>
+                
+                <div class="input-area">
+                    <input type="text" id="question-input" placeholder="Ask a question...">
+                    <button id="ask-button">Ask</button>
+                </div>
+            </div>
+            
+            <div class="references-container">
+                <h3>Relevant References</h3>
+                <div id="references"></div>
+            </div>
+
+
+
+            <div class="about-container">
+                <button id="about-button">About Lexi</button>
+                <div id="about-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>About Olea</h2>
+                        <p><strong>Created by:</strong> Francis Happy </p>
+                        <p><strong>First launched:</strong> 21st June 2025</p>
+                        <p><strong>Purpose:</strong> To provide helpful, friendly assistance with understanding and find answers from the bible in seconds.</p>
+                        <div class="backstory">
+                            <h3>Backstory</h3>
+                            <p>Lexi was developed at the Turingfield Institute as part of their Digital Companion Initiative...</p>
+                        </div>
+                    </div>
+                </div>      </div>
+        </main>
+    </div>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
